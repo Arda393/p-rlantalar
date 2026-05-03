@@ -134,7 +134,7 @@ function selectWho(value) {
   state.selectedOccasion = "";
   elements.occasionStep.classList.remove("step-hidden");
   updateActivePills("occasion", "");
-  renderWaitingState("Seçiminiz kaydedildi. Şimdi hediyenin sunulacağı özel anı belirleyin.");
+  renderWaitingState("Seçiminiz kaydedildi. Şimdi mücevherin eşlik edeceği özel anı belirleyin.");
 }
 
 function selectOccasion(value) {
@@ -158,7 +158,7 @@ function getProductName(row) {
     "name",
     "ürün",
     "urun"
-  ]) || "İsimsiz hediye önerisi";
+  ]) || "İsimsiz ARİŞ AI önerisi";
 }
 
 function filterWithLoading() {
@@ -233,7 +233,7 @@ function resetApp() {
   elements.loader.hidden = true;
   elements.productGrid.innerHTML = "";
   elements.emptyState.hidden = false;
-  elements.emptyState.querySelector("p").textContent = "Önce kimin için ve hangi özel an için hediye aradığınızı seçin. Önerileriniz burada listelenecek.";
+  elements.emptyState.querySelector("p").textContent = "Önce kimin için ve hangi özel an için seçim yapmak istediğinizi belirtin. ARİŞ AI önerileriniz burada listelenecek.";
 }
 
 async function loadProducts() {
