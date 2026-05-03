@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hediye Bulucu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero glass-card">
+      <span class="eyebrow">Hediye keşif oyunu</span>
+      <h1>Sevdiklerine nokta atışı hediye bul</h1>
+      <p>İki minik seçim yap, biz de CSV listesinden sana uygun önerileri sihirli gibi getirelim.</p>
+    </section>
+
+    <section class="quiz glass-card" aria-label="Hediye filtreleme testi">
+      <div class="step" id="whoStep">
+        <div class="step-heading">
+          <span class="step-number">1</span>
+          <h2>Kimin için alıyorsun?</h2>
+        </div>
+        <div class="pill-grid" id="whoOptions" role="group" aria-label="Kimin için seçenekleri"></div>
+      </div>
+
+      <div class="step step-hidden" id="occasionStep">
+        <div class="step-heading">
+          <span class="step-number">2</span>
+          <h2>Ne için alıyorsun?</h2>
+        </div>
+        <div class="pill-grid" id="occasionOptions" role="group" aria-label="Ne için seçenekleri"></div>
+      </div>
+
+      <div class="actions">
+        <button class="reset-button" id="resetButton" type="button">Baştan Başla</button>
+      </div>
+    </section>
+
+    <section class="results glass-card" id="resultsSection" aria-live="polite">
+      <div class="results-header">
+        <div>
+          <span class="eyebrow">Öneriler</span>
+          <h2 id="resultsTitle">Seçimlerini bekliyoruz</h2>
+        </div>
+        <span class="result-count" id="resultCount">0 ürün</span>
+      </div>
+
+      <div class="loader" id="loader" hidden>
+        <span></span>
+        <span></span>
+        <span></span>
+        Ürünler süzülüyor...
+      </div>
+
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">?</div>
+        <p>Önce kimin için ve ne için hediye aradığını seç. Sonra öneriler burada parlayacak.</p>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
