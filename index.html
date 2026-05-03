@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
@@ -6,15 +6,37 @@
   <title>Hediye Bulucu</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header class="site-header" aria-label="Ana menü">
+    <nav class="navbar">
+      <div class="nav-links" aria-label="Kategoriler">
+        <a href="#">Ürünler</a>
+        <a href="#">Koleksiyonlar</a>
+        <a href="#">Alyans</a>
+      </div>
+
+      <a class="brand" href="#" aria-label="Hediye Pırlanta ana sayfa">
+        <span>HEDİYE</span>
+        <small>PIRLANTA</small>
+      </a>
+
+      <div class="nav-actions" aria-label="Hızlı işlemler">
+        <button type="button" aria-label="Arama">⌕</button>
+        <button type="button" aria-label="Favoriler">♡</button>
+        <button type="button" aria-label="Hesabım">♙</button>
+        <button class="cart-button" type="button" aria-label="Sepet">Sepet</button>
+      </div>
+    </nav>
+  </header>
+
   <main class="app-shell">
     <section class="hero glass-card">
-      <span class="eyebrow">Hediye keşif oyunu</span>
-      <h1>Sevdiklerine nokta atışı hediye bul</h1>
-      <p>İki minik seçim yap, biz de CSV listesinden sana uygun önerileri sihirli gibi getirelim.</p>
+      <span class="eyebrow">Kişisel hediye danışmanı</span>
+      <h1>Zarafeti doğru an ile buluşturan seçki</h1>
+      <p>Sevdikleriniz için özel anlara yakışan pırlanta ve mücevher önerilerini iki zarif seçimle keşfedin.</p>
     </section>
 
     <section class="quiz glass-card" aria-label="Hediye filtreleme testi">
@@ -56,8 +78,8 @@
       </div>
 
       <div class="empty-state" id="emptyState">
-        <div class="empty-icon">?</div>
-        <p>Önce kimin için ve ne için hediye aradığını seç. Sonra öneriler burada parlayacak.</p>
+        <div class="empty-icon">A</div>
+        <p>Önce kimin için ve hangi özel an için hediye aradığınızı seçin. Önerileriniz burada listelenecek.</p>
       </div>
 
       <div class="product-grid" id="productGrid"></div>
