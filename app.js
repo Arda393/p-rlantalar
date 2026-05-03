@@ -1,4 +1,4 @@
-﻿const whoOptions = [
+const whoOptions = [
   "annen",
   "sevgilin",
   "arkadaşın",
@@ -104,7 +104,6 @@ function createPill(label, groupName, onSelect) {
   button.dataset.group = groupName;
 
   button.addEventListener("click", () => {
-    playTinyPop();
     onSelect(label);
     updateActivePills(groupName, label);
   });
@@ -135,7 +134,7 @@ function selectWho(value) {
   state.selectedOccasion = "";
   elements.occasionStep.classList.remove("step-hidden");
   updateActivePills("occasion", "");
-  renderWaitingState("Harika seçim. Şimdi hediyenin sebebini seçelim.");
+  renderWaitingState("Seçiminiz kaydedildi. Şimdi hediyenin sunulacağı özel anı belirleyin.");
 }
 
 function selectOccasion(value) {
@@ -166,7 +165,7 @@ function filterWithLoading() {
   elements.loader.hidden = false;
   elements.emptyState.hidden = true;
   elements.productGrid.innerHTML = "";
-  elements.resultsTitle.textContent = "Senin için hediyeler aranıyor";
+  elements.resultsTitle.textContent = "Seçkiniz hazırlanıyor";
   elements.resultCount.textContent = "...";
 
   window.setTimeout(() => {
@@ -183,7 +182,7 @@ function renderProducts(products) {
 
   if (products.length === 0) {
     elements.emptyState.hidden = false;
-    elements.emptyState.querySelector("p").textContent = "Bu seçim için ürün bulamadık. Başka bir kombinasyon deneyebilirsin.";
+    elements.emptyState.querySelector("p").textContent = "Bu seçim için uygun ürün bulunamadı. Farklı bir özel an veya kişi seçimiyle yeniden deneyebilirsiniz.";
     return;
   }
 
@@ -234,30 +233,7 @@ function resetApp() {
   elements.loader.hidden = true;
   elements.productGrid.innerHTML = "";
   elements.emptyState.hidden = false;
-  elements.emptyState.querySelector("p").textContent = "Önce kimin için ve ne için hediye aradığını seç. Sonra öneriler burada parlayacak.";
-}
-
-function playTinyPop() {
-  const AudioContext = window.AudioContext || window.webkitAudioContext;
-
-  if (!AudioContext) {
-    return;
-  }
-
-  const context = new AudioContext();
-  const oscillator = context.createOscillator();
-  const gain = context.createGain();
-
-  oscillator.type = "sine";
-  oscillator.frequency.setValueAtTime(520, context.currentTime);
-  oscillator.frequency.exponentialRampToValueAtTime(760, context.currentTime + 0.06);
-  gain.gain.setValueAtTime(0.03, context.currentTime);
-  gain.gain.exponentialRampToValueAtTime(0.001, context.currentTime + 0.09);
-
-  oscillator.connect(gain);
-  gain.connect(context.destination);
-  oscillator.start();
-  oscillator.stop(context.currentTime + 0.09);
+  elements.emptyState.querySelector("p").textContent = "Önce kimin için ve hangi özel an için hediye aradığınızı seçin. Önerileriniz burada listelenecek.";
 }
 
 async function loadProducts() {
